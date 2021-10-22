@@ -25,7 +25,7 @@
 * Heitor Gomes
 * [Huanderson Lima](https://github.com/huandersonlima)
 * Ingrid Farias
-* Thierry Matheus
+* [Thierry Matheus](https://github.com/ThierryMatheus)
 
 
 

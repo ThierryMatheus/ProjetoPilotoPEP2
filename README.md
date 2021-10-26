@@ -18,13 +18,13 @@
 
 
 ## Equipe :handshake:
-* Esdras Pedro
-* Giovanna do Nacimento
-* Gleydson José
-* Gustavo Jose
-* Heitor Gomes
+* [Esdras Pedro](https://github.com/EsdrasPedro)
+* [Giovanna do Nacimento](https://github.com/Giovannanascimento)
+* [Gleydson José](https://github.com/Gjss333)
+* [Gustavo José](https://github.com/gustavojms)
+* [Heitor Gomes](https://github.com/HeitorGomesIF)
 * [Huanderson Lima](https://github.com/huandersonlima)
-* Ingrid Farias
+* [Ingrid Farias](https://github.com/Ingrid-st)
 * [Thierry Matheus](https://github.com/ThierryMatheus)
 
 

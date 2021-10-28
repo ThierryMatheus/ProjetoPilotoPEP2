@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Denuncia;
 use Illuminate\Http\Request;
 
 class DenunciaController extends Controller
@@ -63,7 +64,8 @@ class DenunciaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $denuncia = Denuncia::find($id);
+        return view('denuncia.edit');
     }
 
     /**
@@ -75,7 +77,10 @@ class DenunciaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $denuncia = Denuncia::where('id', $id)->update([
+            'titulo' => $request->input('titulo'),
+            'comentario' => $request->input('comentario')
+        ]);
     }
 
     /**
@@ -86,6 +91,9 @@ class DenunciaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $denuncia = Denuncia::find($id);
+        $denuncia->delete();
+
+        return redirect('/index');
     }
 }

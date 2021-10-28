@@ -23,7 +23,7 @@ class CreateDenunciasTable extends Migration
                   ->constrained()
                   ->onDelete('cascade');
             $table->foreignId('endereco_id')
-                  ->constrained()
+                  ->constrained('enderecos')
                   ->onDelete('cascade');
         });
     }

@@ -35,6 +35,13 @@ class DenunciaController extends Controller
     public function store(Request $request)
     {
         //
+        denuncia::create([
+            'titulo' => $request->titulo,
+            'data' => $request->data,
+            'hora' => $request->hora,
+            'coment' => $request->coment,
+            'user_id' => Auth::user()->id
+            ]);
     }
 
     /**

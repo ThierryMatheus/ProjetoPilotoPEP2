@@ -17,13 +17,11 @@ class CreateDenunciasTable extends Migration
             $table->id();
             $table->string('titulo');
             $table->string('comentario');
-            $table->date('data_denuncia');
             $table->timestamps();
+            $table->string('latitude');
+            $table->string('longitude');
             $table->foreignId('user_id')
                   ->constrained()
-                  ->onDelete('cascade');
-            $table->foreignId('endereco_id')
-                  ->constrained('enderecos')
                   ->onDelete('cascade');
         });
     }

@@ -23,7 +23,7 @@ class DenunciaController extends Controller
      */
     public function create()
     {
-        //
+        return view('denuncia.create');
     }
 
     /**

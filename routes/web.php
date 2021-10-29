@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DenunciaController;
+use App\Http\Controllers\EmpresaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,9 @@ Route::post('/denuncia/create' , [DenunciaController::Class, 'store'])->middlewa
 Route::get('/denuncia/{id}/edit', [DenunciaController::class, 'edit']);
 Route::put('/denuncia/{id}', [DenunciaController::class, 'update']);
 Route::delete('/denuncia{id}', [DenunciaController::class, 'destroy']);
+
+Route::get('/empresa/create', [EmpresaController::class, 'index']);
+Route::post('/empresa/create' , [EmpresaController::class, 'store'])->name('create_empresa');
 
 
 require __DIR__.'/auth.php';

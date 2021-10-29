@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DenunciaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::post('/denuncia/create' , [DenunciaController::Class, 'store'])->middleware(['auth'])->name('criar_denuncia');
+Route::get('/denuncia/{id}/edit', [DenunciaController::class, 'edit']);
+Route::put('/denuncia/{id}', [DenunciaController::class, 'update']);
+Route::delete('/denuncia{id}', [DenunciaController::class, 'destroy']);
 
 
 require __DIR__.'/auth.php';

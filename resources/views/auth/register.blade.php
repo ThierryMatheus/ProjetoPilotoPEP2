@@ -14,9 +14,9 @@
 
             <!-- Name -->
             <div>
-                <x-label for="name" :value="__('Name')" />
+                <x-label for="nome" :value="__('Nome')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input id="nome" class="block mt-1 w-full" type="text" name="nome" :value="old('nome')" required autofocus />
             </div>
 
             <!-- Email Address -->
@@ -25,10 +25,31 @@
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
+                
+            <!-- cpf -->
+            <div class="mt-4">
+                <x-label for="cpf" :value="__('CPF')" />
+
+                <x-input id="cpf" class="block mt-1 w-full" type="text" name="cpf" :value="old('cpf')" required />
+            </div>
+
+            <!-- data_nascimento -->
+            <div class="mt-4">
+                <x-label for="data_nascimento" :value="__('Data de Nascimento')" />
+
+                <x-input id="data_nascimento" class="block mt-1 w-full" type="date" name="data_nascimento" :value="old('data_nascimento')" required />
+            </div>
+
+            <!-- celular -->
+            <div class="mt-4">
+                <x-label for="celular" :value="__('Celular')" />
+
+                <x-input id="celular" class="block mt-1 w-full" type="text" name="celular" :value="old('celular')" required />
+            </div>
 
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+                <x-label for="password" :value="__('Senha')" />
 
                 <x-input id="password" class="block mt-1 w-full"
                                 type="password"
@@ -38,7 +59,7 @@
 
             <!-- Confirm Password -->
             <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
+                <x-label for="password_confirmation" :value="__('Confirmar Senha')" />
 
                 <x-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"

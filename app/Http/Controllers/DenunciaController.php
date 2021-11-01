@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Denuncia;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Auth;
 
 class DenunciaController extends Controller
 {
@@ -38,11 +41,14 @@ class DenunciaController extends Controller
         //
         denuncia::create([
             'titulo' => $request->titulo,
-            'data' => $request->data,
-            'hora' => $request->hora,
             'coment' => $request->coment,
             'user_id' => Auth::user()->id
             ]);
+
+            return Redirect::route('dashboard')
+        ->with('success', 'Denuncia Criada com sucesso');
+
+
     }
 
     /**

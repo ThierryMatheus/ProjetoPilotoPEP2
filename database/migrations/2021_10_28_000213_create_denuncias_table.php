@@ -16,10 +16,10 @@ class CreateDenunciasTable extends Migration
         Schema::create('denuncias', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
-            $table->string('comentario');
+            $table->string('coment');
             $table->timestamps();
-            $table->string('latitude');
-            $table->string('longitude');
+            $table->string('latitude')->nullable();
+            $table->string('longitude')->nullable();
             $table->foreignId('user_id')
                   ->constrained()
                   ->onDelete('cascade');

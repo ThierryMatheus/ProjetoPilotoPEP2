@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Controllers\Auth\RegisteredUserController;
-use App\Http\Controllers\DenunciaController;
-use App\Http\Controllers\EmpresaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DenunciaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +22,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/denuncia', function () {
+    return view('denuncia.create');
+})->middleware(['auth'])->name('denunciar');
+
+
+// Route::get('/denuncia/create', 'App\Http\Controllers\DenunciaController@store')->middleware(['auth'])->name('criar_denuncia');
 Route::post('/denuncia/create' , [DenunciaController::class, 'store'])->middleware(['auth'])->name('criar_denuncia');
 Route::get('/denuncia/{id}/edit', [DenunciaController::class, 'edit']);
 Route::put('/denuncia/{id}', [DenunciaController::class, 'update']);
@@ -36,4 +40,3 @@ Route::resource('reclamante', RegisteredUserController::class)->middleware(['aut
 
 
 require __DIR__.'/auth.php';
-

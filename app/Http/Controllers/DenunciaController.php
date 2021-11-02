@@ -17,7 +17,7 @@ class DenunciaController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**

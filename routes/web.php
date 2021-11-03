@@ -26,12 +26,14 @@ Route::get('/denuncia', function () {
     return view('denuncia.create');
 })->middleware(['auth'])->name('denunciar');
 
-Route::get('/show', function () {
-    return view('denuncia.show');
-})->middleware(['auth'])->name('show_denuncia');
+Route::get('/suas-denuncias', function () {
+    return view('denuncia.view');
+})->middleware(['auth'])->name('suas_denuncias');
 
 
 // Route::get('/denuncia/create', 'App\Http\Controllers\DenunciaController@store')->middleware(['auth'])->name('criar_denuncia');
+
+
 Route::post('/denuncia/create' , [DenunciaController::class, 'store'])->middleware(['auth'])->name('criar_denuncia');
 Route::get('/denuncia/{denuncia}', [DenunciaController::Class, 'show'])->middleware(['auth'])->name('ver_denuncia');
 Route::get('/denuncia/{id}/edit', [DenunciaController::class, 'edit']);

@@ -15,8 +15,15 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('denunciar')" :active="request()->routeIs('denunciar')">
+                        {{ __('Criar Denuncia') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('suas_denuncias')" :active="request()->routeIs('suas_denuncias')">
+                        {{ __('Suas Denuncias') }}
+                    </x-nav-link>
                 </div>
             </div>
+    
         
 
             <!-- Settings Dropdown -->
@@ -38,7 +45,6 @@
                         <!-- Authentication -->
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
-
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">

@@ -18,6 +18,13 @@
                                 <td>{{$denuncia->titulo}}</td>
                                 <td>{{$denuncia->created_at}}</td>
                                 <td><a href="/denuncia/{{ $denuncia->id }}/edit" class="text-green-500">Editar</a></td>
+                                <td>
+                                    <form action="/denuncia/{{ $denuncia->id }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-500">Excluir</button>
+                                    </form>
+                                </td>
                             </tr>
                             </tbody>
                         @endforeach

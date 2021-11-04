@@ -36,9 +36,9 @@ Route::get('/suas-denuncias', function () {
 
 Route::post('/denuncia/create' , [DenunciaController::class, 'store'])->middleware(['auth'])->name('criar_denuncia');
 Route::get('/denuncia/{denuncia}', [DenunciaController::Class, 'show'])->middleware(['auth'])->name('ver_denuncia');
-Route::get('/denuncia/{id}/edit', [DenunciaController::class, 'edit']);
+Route::get('/denuncia/{id}/edit', [DenunciaController::class, 'edit'])->name('editar_denuncia');
 Route::put('/denuncia/{id}', [DenunciaController::class, 'update']);
-Route::delete('/denuncia{id}', [DenunciaController::class, 'destroy']);
+Route::delete('/denuncia/{id}', [DenunciaController::class, 'destroy'])->name('excluir_denuncia');
 
 Route::get('/empresa/create', [EmpresaController::class, 'index']);
 Route::post('/empresa/create' , [EmpresaController::class, 'store'])->name('create_empresa');

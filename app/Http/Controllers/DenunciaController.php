@@ -17,7 +17,7 @@ class DenunciaController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -71,7 +71,7 @@ class DenunciaController extends Controller
     public function edit($id)
     {
         $denuncia = Denuncia::find($id);
-        return view('denuncia.edit');
+        return view('denuncia.edit')->with('denuncia', $denuncia);
     }
 
     /**
@@ -85,8 +85,10 @@ class DenunciaController extends Controller
     {
         $denuncia = Denuncia::where('id', $id)->update([
             'titulo' => $request->input('titulo'),
-            'comentario' => $request->input('comentario')
+            'coment' => $request->input('coment')
         ]);
+
+        return redirect('/suas-denuncias');
     }
 
     /**
@@ -100,6 +102,6 @@ class DenunciaController extends Controller
         $denuncia = Denuncia::find($id);
         $denuncia->delete();
 
-        return redirect('/index');
+        return redirect('/suas-denuncias');
     }
 }
